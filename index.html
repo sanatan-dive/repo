@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-User Blog Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="#">BlogPlatform</a>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="#home" onclick="showHomePage()">Home</a></li>
+            <li><a href="#blogs" onclick="showBlogPage()">Blogs</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Page (Initially visible) -->
+    <section id="homePage" class="home-page">
+        <h1>Welcome to BlogPlatform</h1>
+        <p>Your one-stop destination for amazing blogs!</p>
+        <div id="login" class="auth-form">
+            <h3>Login/Register</h3>
+            <input id="username" type="text" placeholder="Username" required />
+            <input id="password" type="password" placeholder="Password" required />
+            <button class="btn" onclick="register()">Register</button>
+            <button class="btn" onclick="login()">Login</button>
+        </div>
+    </section>
+
+    <!-- Blog Page (Hidden until login) -->
+    <div id="blogApp" class="blog-app" style="display: none;">
+        <div class="create-post">
+            <h3>Create a Post</h3>
+            <input id="title" type="text" placeholder="Title" required />
+            <textarea id="content" placeholder="Content" required></textarea>
+            <button class="btn" onclick="createPost()">Post</button>
+        </div>
+
+        <h3>All Posts</h3>
+        <div id="postList" class="post-list"></div>
+        <p id="noPosts" class="no-posts-message" style="display: none;">No posts available yet.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
